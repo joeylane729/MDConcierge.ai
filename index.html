@@ -149,31 +149,32 @@
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
-            margin-bottom: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+            justify-items: center;
         }
 
         .stat-card {
             background: white;
             padding: 40px 32px;
-            border-radius: 20px;
+            border-radius: 16px;
             text-align: center;
             border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .stat-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
 
         .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
+            font-size: 2.5rem;
+            font-weight: 700;
             color: #008B8B;
-            margin-bottom: 8px;
-            letter-spacing: -0.02em;
+            margin-bottom: 12px;
         }
 
         .stat-label {
@@ -238,10 +239,25 @@
         }
 
         .market-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 32px;
-            margin-top: 60px;
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+        }
+        .market-card {
+            flex: 1;
+            text-align: center;
+            margin: 0 2px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .market-symbol {
+            flex: 0 0 30px;
+            text-align: center;
+            font-size: 2em;
+            display: flex;
+            align-items: center;
         }
 
         .market-card {
@@ -269,6 +285,16 @@
             font-weight: 800;
             margin-bottom: 8px;
             letter-spacing: -0.02em;
+        }
+
+        .market-symbol {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #008B8B;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
         }
 
         /* Team Section */
@@ -493,10 +519,6 @@
                     <div class="stat-number">30M</div>
                     <div class="stat-label">Referrals for uncommon conditions</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">$20K</div>
-                    <div class="stat-label">Average cost per medical complication</div>
-                </div>
             </div>
 
             <div class="problem-text">
@@ -547,19 +569,23 @@
                 <div class="market-card">
                     <h3>Patient Market</h3>
                     <div class="amount">$3.75B</div>
-                    <p>30M patients × $100 basic service<br>+ 1.5M patients × $500 premium service</p>
+                    <p>Our service offers both basic and premium options to cater to the diverse needs of patients seeking specialized care.</p>
                 </div>
+                
+                <div class="market-symbol">+</div>
                 
                 <div class="market-card">
                     <h3>Provider Market</h3>
                     <div class="amount">$750M</div>
-                    <p>300K referring physicians<br>× $2,500 annual subscription</p>
+                    <p>We provide a subscription model for referring physicians, enabling them to access our platform's full capabilities.</p>
                 </div>
                 
-                <div class="market-card">
+                <div class="market-symbol">=</div>
+                
+                <div class="market-card total">
                     <h3>Total SAM</h3>
                     <div class="amount">$4.5B</div>
-                    <p>Serviceable Addressable Market<br>in the United States</p>
+                    <p>Serviceable Addressable Market in the United States, combining both patient and provider markets.</p>
                 </div>
             </div>
         </div>
@@ -579,6 +605,9 @@
                     <div class="title">Co-Founder & CEO</div>
                     <p>Theodore H. Schwartz, MD was the David and Ursel Barnes Endowed Professorship of Minimally Invasive Neurosurgery at Weill Cornell Medicine, one of the busiest and highest-ranked neurosurgery centers in the world. He has published over five hundred scientific articles and over two hundred chapters on neurosurgery. He has lectured around the world—from Bogotá to Vienna to Mumbai—on new, minimally invasive surgical techniques that he helped develop, and has authored seven medical textbooks. He also ran a basic science laboratory devoted to epilepsy research.</p>
                     <div class="team-links">
+                        <a href="mailto:teds@mdspecialist.ai" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
                         <a href="https://www.linkedin.com/in/theodore-schwartz-29b7a1b3/" target="_blank" title="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
@@ -594,8 +623,11 @@
                     </div>
                     <h3>Joseph Lane</h3>
                     <div class="title">Co-Founder & CTO</div>
-                    <p>Joseph Lane brings two years of product management experience from Capital One Software, where he's led product development for Slingshot, Capital One's first B2B SaaS product serving 40+ enterprise clients. A Duke University graduate, Joseph studied Computer Science, Economics, and Innovation & Entrepreneurship, bringing a blend of technical expertise and business acumen to the product's development.</p>
+                    <p>Joseph graduated from Duke University where he studied Computer Science, Economics, and Innovation & Entrepreneurship. He's spent two years as a product manager at Capital One, where he's helped shape Slingshot, the company's flagship B2B SaaS platform and first major step into the enterprise software market.</p>
                     <div class="team-links">
+                        <a href="mailto:joeyl@mdspecialist.ai" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
                         <a href="https://www.linkedin.com/in/joseph-lane-547761169/" target="_blank" title="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
@@ -614,11 +646,7 @@
             <div class="contact-info">
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
-                    <span>contact@mdconcierge.ai</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-globe"></i>
-                    <span>mdconcierge.ai</span>
+                    <a href="mailto:teds@mdspecialist.ai" style="color: white; text-decoration: none;">Contact Us</a>
                 </div>
             </div>
         </div>
